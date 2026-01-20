@@ -1,0 +1,57 @@
+---
+title: "The Effect of Chalk on Hangtime"
+output: github_document
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+bibliography: references.bib
+knit: worcs::cite_all
+---
+
+```{r setup, include=FALSE}
+library("worcs")
+# We recommend that you prepare your raw data for analysis in 'prepare_data.R',
+# and end that file with either open_data(yourdata), or closed_data(yourdata).
+# Then, uncomment the line below to load the original or synthetic data
+# (whichever is available), to allow anyone to reproduce your code:
+load_data()
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This manuscript uses the Workflow for Open Reproducible Code in Science [@vanlissaWORCSWorkflowOpen2021] to ensure reproducibility and transparency. All code <!--and data--> are available at <demo_metarep>.
+
+This is an example of a non-essential citation [@vanlissaWORCSWorkflowOpen2021]. If you change the rendering function to `worcs::cite_essential`, it will be removed.
+
+<!--The function below inserts a notification if the manuscript is knit using synthetic data. Make sure to insert it after load_data().-->
+`r notify_synthetic()`
+
+
+## Results
+
+```{r}
+contrasts(df$condition) <- matrix(c(
+  2/3,  1/2,  1, 0,   
+  2/3,  1/2, -1, 0,
+  2/3, -1,    0, 0,
+  -1,   0,    0, -1,
+  -1,   0,    0, 1), nrow = 5, byrow = TRUE)
+colnames(contrasts(df$condition)) <- c("noVchalk", "liquidVsolid", "powderVball", "nothingVshirt")
+res <- lm(hangtime ~ condition, data = df)
+res_sum <- summary(res)
+tab_coef <- res_sum$coefficients
+write.csv(tab_coef, "tab_coef.csv", row.names = FALSE)
+estimand <- round(tab_coef["conditionnoVchalk", ], 3)
+write.csv(estimand, "estimand.csv", row.names = FALSE)
+knitr::kable(res_sum$coefficients, digits = 2, caption = "Regression coefficients for planned contrasts for the effect of chalk on hangtime.")
+```
+
+We find that using chalk has a `r c("non-significant", "significant")[(estimand[4] < .05)+1L]` effect on hang time, $t `r report(estimand[3])`, p `r report(estimand[4])`$.
+
+```{r}
+library(ggplot2)
+df_plot <- df
+df_plot$color <- factor(df$condition, levels = c("chalk ball", "chalk powder", "liquid chalk", "nothing", "t-shirt"), labels = c("chalk", "chalk", "chalk", "no", "no"))
+ggplot(df_plot, aes(x = condition, y = hangtime, color = color)) +
+  geom_boxplot() +
+  geom_jitter(width = .2) +
+  theme_bw()
+```
+

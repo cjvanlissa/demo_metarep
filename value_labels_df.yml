@@ -1,0 +1,7 @@
+condition:
+  class: factor
+  '1': chalk ball
+  '2': chalk powder
+  '3': liquid chalk
+  '4': nothing
+  '5': t-shirt

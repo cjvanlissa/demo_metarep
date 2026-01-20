@@ -1,0 +1,14 @@
+worcs_version: 0.1.19
+creator: cjvanlissa
+entry_point: manuscript/manuscript.Rmd
+recipe:
+  recipe: rmarkdown::render('manuscript/manuscript.Rmd')
+  terminal: no
+data:
+  df.csv:
+    save_expression: write.csv(x = data, file = filename, row.names = FALSE)
+    load_expression: read.csv(file = filename, stringsAsFactors = TRUE)
+    codebook: codebook_df.Rmd
+    labels: value_labels_df.yml
+checksums:
+  df.csv: cd9bec5ba551c767c7282e9be2a3d175
