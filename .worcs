@@ -12,5 +12,5 @@ data:
     labels: value_labels_df.yml
 checksums:
   df.csv: d095070c2bea748cc25c29ea872f3302
-  manuscript/tab_coef.csv: 2b37462741840a3e402e0e12f033226f
-endpoints: manuscript/tab_coef.csv
+  manuscript/estimand.csv: 722308386dd8cc16dcb1986f863e1118
+endpoints: manuscript/estimand.csv
