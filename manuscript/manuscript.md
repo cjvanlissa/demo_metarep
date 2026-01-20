@@ -33,17 +33,17 @@ knitr::kable(res_sum$coefficients, digits = 2, caption = "Regression coefficient
 
 |                        | Estimate | Std. Error | t value | Pr(\>\|t\|) |
 |:-----------------------|---------:|-----------:|--------:|------------:|
-| (Intercept)            |    24.28 |       1.09 |   22.32 |        0.00 |
-| conditionnoVchalk      |     0.62 |       1.33 |    0.47 |        0.64 |
-| conditionliquidVsolid  |     2.76 |       2.12 |    1.30 |        0.20 |
-| conditionpowderVball   |     2.02 |       1.61 |    1.25 |        0.21 |
-| conditionnothingVshirt |    -1.74 |       1.71 |   -1.02 |        0.31 |
+| (Intercept)            |    25.32 |       1.04 |   24.38 |        0.00 |
+| conditionnoVchalk      |    -3.08 |       1.27 |   -2.43 |        0.02 |
+| conditionliquidVsolid  |     0.41 |       2.03 |    0.20 |        0.84 |
+| conditionpowderVball   |     0.83 |       1.54 |    0.54 |        0.59 |
+| conditionnothingVshirt |     5.26 |       1.63 |    3.23 |        0.00 |
 
 Regression coefficients for planned contrasts for the effect of chalk on
 hangtime.
 
-We find that using chalk has a non-significant effect on hang time,
-$t = 0.47, p = 0.64$.
+We find that using chalk has a significant effect on hang time,
+$t = -2.43, p = 0.02$.
 
 ``` r
 library(ggplot2)

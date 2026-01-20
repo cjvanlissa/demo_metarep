@@ -11,6 +11,6 @@ df <- read.csv("chalk.csv", stringsAsFactors = TRUE)
 df[c("id", "comment")] <- NULL
 
 # Randomize DV
-df$hangtime <- sample(df$hangtime)
+# df$hangtime <- sample(df$hangtime)
 
 worcs::open_data(df)
