@@ -1,0 +1,9 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+raw_data|stem|5358394619e2c14d|2678cac15332ebde|2c530c1562a7fbd1|-1101284392||t20474.6784098455s|s1263b|1263|rds|local|vector|||1.741||
+worcs_data|stem|36c3ec5ad745d215|e6c11cca6a96ac8e|2c530c1562a7fbd1|1327102777||t20474.6784109219s|s1292b|1292|rds|local|vector|||0.039||
+data|stem|5cfc67e9e21abf5b|64cfd4ff12a6e8b7|00403ecd3d83363b|33550471||t20474.6784123443s|s1265b|1265|rds|local|vector|||0.001||
+dens_plot|stem|ad9c403dfb47a565|7603c7275e163b19|f6110c8c36e9133a|-164102271||t20474.6784136867s|s44b|44|rds|local|vector|||0.086||
+fit|stem|7bced7e6ff229bd0|716b73eb42fdd95f|a49c5a4577535529|150100524||t20474.6784140469s|s5988b|5988|rds|local|vector|||0.007||
+create_plot|function|5ec837cb82829cc3
+dens_data|stem|65a4f965e6acf7cf|02096dbda29db1e5|a49c5a4577535529|-1332267950||t20474.6868958995s|s8170b|8170|rds|local|vector|||0.004||
+.Random.seed|object|374acee9c66d8703

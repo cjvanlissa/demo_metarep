@@ -12,3 +12,6 @@
 .Rproj.user
 !df.csv
 !codebook_df.csv
+!airquality.csv
+!codebook_airquality.csv
+!synthetic_airquality.csv

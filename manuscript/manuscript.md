@@ -1,6 +1,6 @@
 The Effect of Chalk on Hangtime
 ================
-20 January, 2026
+21 January, 2026
 
 This manuscript uses the Workflow for Open Reproducible Code in Science
 (Van Lissa et al. 2021) to ensure reproducibility and transparency. All

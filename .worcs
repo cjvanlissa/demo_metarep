@@ -10,7 +10,14 @@ data:
     load_expression: read.csv(file = filename, stringsAsFactors = TRUE)
     codebook: codebook_df.Rmd
     labels: value_labels_df.yml
+  airquality.csv:
+    save_expression: write.csv(x = data, file = filename, row.names = FALSE)
+    load_expression: read.csv(file = filename, stringsAsFactors = TRUE)
+    codebook: codebook_airquality.Rmd
+    synthetic: synthetic_airquality.csv
 checksums:
   df.csv: d095070c2bea748cc25c29ea872f3302
   manuscript/estimand.csv: 722308386dd8cc16dcb1986f863e1118
-endpoints: manuscript/estimand.csv
+  airquality.csv: 50312324d0b6a8a7ccd6e99617b50077
+  synthetic_airquality.csv: 977e3373aaaa43616e65be0ea660067b
+testthat: yes
